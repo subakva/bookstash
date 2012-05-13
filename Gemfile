@@ -4,8 +4,6 @@ gem 'rails', '~>3.2.0'
 gem 'jquery-rails'
 
 gem 'dropbox-sdk'
-
-gem 'heroku'
 gem 'unicorn'
 
 # gem 'mongoid'
@@ -26,6 +24,8 @@ group :assets do
 end
 
 group :test, :development do
+  gem 'heroku'
+  gem 'foreman'
   gem 'rspec-rails', '~> 2.10'
   # gem 'simplecov', '~> 0.6.2'
   # gem 'cane', '~> 1.3.0'

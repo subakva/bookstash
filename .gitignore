@@ -18,8 +18,9 @@
 /doc
 /coverage
 
-# Exclude the script that sets up credentials in environment variables
+# Exclude foreman environment variables
 script/credentials
+/.env
 
 # Exclude everything mongodb that isn't explicitly included
 /mongodb
