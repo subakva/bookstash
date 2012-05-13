@@ -5,6 +5,7 @@ gem 'jquery-rails'
 
 gem 'dropbox-sdk'
 gem 'unicorn'
+gem 'newrelic_rpm'
 
 # gem 'mongoid'
 # gem 'bson_ext'
