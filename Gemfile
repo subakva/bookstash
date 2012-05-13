@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~>3.2.0'
-
 gem 'jquery-rails'
-gem 'heroku'
+
 gem 'dropbox-sdk'
+
+gem 'heroku'
+gem 'unicorn'
 
 # gem 'mongoid'
 # gem 'bson_ext'
