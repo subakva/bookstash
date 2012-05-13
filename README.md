@@ -15,6 +15,10 @@ Features
 
 Tech Tasks
 ----------
+* documentation generation
+* code quality checking: cane
+* rspec coverage: simplecov
+
 * sass/compass
 * haml
 * mongoid (use the simple mongoid cms?)
