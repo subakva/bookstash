@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '~>3.2.0'
 gem 'jquery-rails'
+gem 'haml-rails'
 
 gem 'dropbox-sdk'
 gem 'unicorn'
@@ -46,10 +47,11 @@ group :test, :development do
 end
 
 group :test do
-  # gem 'capybara'
-  # gem 'launchy' # for save_and_open_page
-  # gem 'database_cleaner'
+  gem 'capybara'
+  gem 'capybara-webkit' # use a headless browser (required "brew install qt")
+  gem 'launchy' # for save_and_open_page
   # gem 'factory_girl_rails'
+  gem 'database_cleaner'
   gem 'mongoid-rspec'
 end
 

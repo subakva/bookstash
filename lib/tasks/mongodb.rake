@@ -1,15 +1,19 @@
 namespace :mongodb do
 
+  def test_db_name
+    'bookstash_test'
+  end
+
   def dev_db_name
     'bookstash_development'
   end
 
-  def mongod_pid
-    pid_path = File.join(mongo_dir, 'pids', 'mongod')
-    return nil unless File.exists?(pid_path)
-    pid = File.read(pid_path).strip
-    return pid.blank? ? nil : pid
-  end
+  # def mongod_pid
+  #   pid_path = File.join(mongo_dir, 'pids', 'mongod')
+  #   return nil unless File.exists?(pid_path)
+  #   pid = File.read(pid_path).strip
+  #   return pid.blank? ? nil : pid
+  # end
 
   def mongo_dir
     File.join(Rails.root, 'mongodb')
@@ -45,24 +49,24 @@ namespace :mongodb do
     FileUtils.mkdir_p(File.join(mongo_dir, 'pids'))
   end
 
-  desc 'Starts the mongodb server'
-  task :start do
-    if mongod_pid.present?
-      puts "=> MongoDB is already running: #{mongod_pid}."
-    else
-      pid = Process.spawn("mongodb/bin/mongod -f #{mongo_dir}/mongod.conf")
-      Process.detach pid
-    end
-  end
+  # desc 'Starts the mongodb server'
+  # task :start do
+  #   if mongod_pid.present?
+  #     puts "=> MongoDB is already running: #{mongod_pid}."
+  #   else
+  #     pid = Process.spawn("mongodb/bin/mongod -f #{mongo_dir}/mongod.conf")
+  #     Process.detach pid
+  #   end
+  # end
 
-  desc 'Stops the mongodb server'
-  task :stop do
-    if mongod_pid.present?
-      run_command("kill #{mongod_pid}")
-    else
-      puts "=> MongoDB is not running. Either pid file is empty or does not exist."
-    end
-  end
+  # desc 'Stops the mongodb server'
+  # task :stop do
+  #   if mongod_pid.present?
+  #     run_command("kill #{mongod_pid}")
+  #   else
+  #     puts "=> MongoDB is not running. Either pid file is empty or does not exist."
+  #   end
+  # end
 
   desc 'Starts a mongodb shell'
   task :shell do

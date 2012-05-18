@@ -20,8 +20,7 @@ Tech Tasks
 * rspec coverage: simplecov
 
 * sass/compass
-* haml
-* mongoid (use the simple mongoid cms?)
+* simple mongoid cms?
 * paperclip / document storage?
 * factory_girl
 * sidekiq
@@ -29,14 +28,18 @@ Tech Tasks
 * rollout (or similar)
 * user roles (cancan?)
 * tagging/categorization (with mongoid search?)
-* guard
-* capybara
+* guard-coffee
 * jasmine?
 * backbone / ember ?
 * airbrake / newrelic / exceptional
+* caching (cloudfront? heroku something?)
+
+* mongoid
+* guard
+* capybara
 * newrelic
 * heroku
-* caching (cloudfront? heroku something?)
+* haml
 * static controller
 
 
