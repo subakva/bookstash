@@ -55,6 +55,6 @@ group :test do
   gem 'guard-spork'
 end
 
-# group :development do
-#   gem 'powder'
-# end
+group :development do
+  gem 'powder'
+end
