@@ -25,9 +25,19 @@ group :assets do
 end
 
 group :test, :development do
-  gem 'heroku'
-  gem 'foreman'
-  gem 'rspec-rails', '~> 2.10'
+  gem 'heroku'  # Deploy to heroku
+  gem 'foreman' # Use foreman for managing processes
+
+  # Testing
+  gem 'rspec-rails', '~> 2.10' # Include in development for rake tasks
+
+  # Guard requirements
+  if RUBY_PLATFORM =~ /darwin/i
+    gem 'rb-fsevent'
+    gem 'growl'
+  end
+  gem 'guard-rspec'
+
   # gem 'simplecov', '~> 0.6.2'
   # gem 'cane', '~> 1.3.0'
   # gem 'yard', '~> 0.7.5'
@@ -35,12 +45,13 @@ group :test, :development do
   # gem 'ruby-debug19', :require => 'ruby-debug'
 end
 
-# group :test do
-#   gem 'capybara'
-#   gem 'database_cleaner'
-#   gem 'factory_girl_rails'
-#   gem 'mongoid-rspec'
-# end
+group :test do
+  # gem 'capybara'
+  # gem 'launchy' # for save_and_open_page
+  # gem 'database_cleaner'
+  # gem 'factory_girl_rails'
+  # gem 'mongoid-rspec'
+end
 
 # group :development do
 #   gem 'powder'
