@@ -32,13 +32,6 @@ group :test, :development do
   # Testing
   gem 'rspec-rails', '~> 2.10' # Include in development for rake tasks
 
-  # Guard requirements
-  if RUBY_PLATFORM =~ /darwin/i
-    gem 'rb-fsevent'
-    gem 'growl'
-  end
-  gem 'guard-rspec'
-
   # gem 'simplecov', '~> 0.6.2'
   # gem 'cane', '~> 1.3.0'
   # gem 'yard', '~> 0.7.5'
@@ -50,9 +43,19 @@ group :test do
   gem 'capybara'
   gem 'capybara-webkit' # use a headless browser (required "brew install qt")
   gem 'launchy' # for save_and_open_page
-  # gem 'factory_girl_rails'
+  gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'mongoid-rspec'
+
+  # Guard requirements
+  if RUBY_PLATFORM =~ /darwin/i
+    gem 'rb-fsevent'
+    gem 'growl'
+  end
+  gem 'guard-rspec'
+
+  gem 'spork'
+  gem 'guard-spork'
 end
 
 # group :development do
