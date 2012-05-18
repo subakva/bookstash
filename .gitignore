@@ -21,6 +21,7 @@
 # Exclude foreman environment variables
 script/credentials
 /.env
+/.powenv
 
 # Exclude everything mongodb that isn't explicitly included
 /mongodb

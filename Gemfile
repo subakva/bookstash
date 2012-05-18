@@ -18,10 +18,7 @@ gem 'bson_ext'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platform => :ruby
-
+  gem 'therubyracer', :platform => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -29,11 +26,11 @@ group :test, :development do
   gem 'heroku'  # Deploy to heroku
   gem 'foreman' # Use foreman for managing processes
 
-  # Testing
-  gem 'rspec-rails', '~> 2.10' # Include in development for rake tasks
+  # Include in development for rake tasks
+  gem 'rspec-rails', '~> 2.10' 
+  gem 'simplecov', '~> 0.6.2'
+  gem 'cane', '~> 1.3.0'
 
-  # gem 'simplecov', '~> 0.6.2'
-  # gem 'cane', '~> 1.3.0'
   # gem 'yard', '~> 0.7.5'
   # gem 'yard-tomdoc', '~> 0.4.0'
   # gem 'ruby-debug19', :require => 'ruby-debug'
