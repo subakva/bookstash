@@ -7,8 +7,8 @@ gem 'dropbox-sdk'
 gem 'unicorn'
 gem 'newrelic_rpm'
 
-# gem 'mongoid'
-# gem 'bson_ext'
+gem 'mongoid'
+gem 'bson_ext'
 # gem 'will_paginate_mongoid'
 # gem 'bootstrap-will_paginate' # Bootstrap-compatible LinkRenderer for will_paginate
 
@@ -50,7 +50,7 @@ group :test do
   # gem 'launchy' # for save_and_open_page
   # gem 'database_cleaner'
   # gem 'factory_girl_rails'
-  # gem 'mongoid-rspec'
+  gem 'mongoid-rspec'
 end
 
 # group :development do
