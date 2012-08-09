@@ -17,6 +17,7 @@
 # Ignore generated documentation
 /doc
 /coverage
+/*.sublime-*
 
 # Exclude foreman environment variables
 script/credentials
