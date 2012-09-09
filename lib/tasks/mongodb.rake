@@ -29,7 +29,8 @@ namespace :mongodb do
   desc 'Installs mongodb into a sub-directory'
   task :install do
     puts " => Downloading mongodb..."
-    run_command('wget http://fastdl.mongodb.org/osx/mongodb-osx-x86_64-2.0.5.tgz -O tmp/mongodb.tgz')
+    FileUtils.mkdir_p('tmp')
+    run_command('wget http://fastdl.mongodb.org/osx/mongodb-osx-x86_64-2.2.0.tgz -O tmp/mongodb.tgz')
 
     puts " => Extracting mongodb files..."
     run_command('tar xzf tmp/mongodb.tgz')

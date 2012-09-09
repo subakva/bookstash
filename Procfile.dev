@@ -1,2 +1,1 @@
 mongo:  mongodb/bin/mongod -f mongodb/mongod.conf
-guard:  bundle exec guard

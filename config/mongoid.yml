@@ -1,23 +1,23 @@
 development:
-  port: 27049
-  host: localhost
-  database: bookstash_development
+  sessions:
+    default:
+      database: bookstash_development
+      hosts:
+        - localhost:27049
+      options:
+        consistency: :eventual
+        safe: true
+  options:
+    use_utc: true
 
 test:
-  port: 27049
-  host: localhost
-  database: bookstash_test
-
-# set these environment variables on your prod server
-# production:
-#   host: <%= ENV['MONGOID_HOST'] %>
-#   port: <%= ENV['MONGOID_PORT'] %>
-#   username: <%= ENV['MONGOID_USERNAME'] %>
-#   password: <%= ENV['MONGOID_PASSWORD'] %>
-#   database: <%= ENV['MONGOID_DATABASE'] %>
-#   max_retries_on_connection_failure: 3
-#   # slaves:
-#   #   - host: slave1.local
-#   #     port: 27018
-#   #   - host: slave2.local
-#   #     port: 27019
+  sessions:
+    default:
+      database: bookstash_test
+      hosts:
+        - localhost:27049
+      options:
+        consistency: :eventual
+        safe: true
+  options:
+    use_utc: true

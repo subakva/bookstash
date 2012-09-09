@@ -9,7 +9,6 @@ gem 'unicorn'
 gem 'newrelic_rpm'
 
 gem 'mongoid'
-gem 'bson_ext'
 # gem 'will_paginate_mongoid'
 # gem 'bootstrap-will_paginate' # Bootstrap-compatible LinkRenderer for will_paginate
 
@@ -27,7 +26,7 @@ group :test, :development do
   gem 'foreman' # Use foreman for managing processes
 
   # Include in development for rake tasks
-  gem 'rspec-rails', '~> 2.10' 
+  gem 'rspec-rails', '~> 2.10'
   gem 'simplecov', '~> 0.6.2'
   gem 'cane', '~> 1.3.0'
 
@@ -43,16 +42,6 @@ group :test do
   gem 'factory_girl_rails'
   gem 'database_cleaner'
   gem 'mongoid-rspec'
-
-  # Guard requirements
-  if RUBY_PLATFORM =~ /darwin/i
-    gem 'rb-fsevent'
-    gem 'growl'
-  end
-  gem 'guard-rspec'
-
-  gem 'spork'
-  gem 'guard-spork'
 end
 
 group :development do
