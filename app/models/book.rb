@@ -2,7 +2,7 @@ class Book
   include Mongoid::Document
   include Mongoid::Timestamps
 
-  # embeds_many :book_versions
+  embedded_in :user
 
   field :title, type: String
   validates_presence_of :title

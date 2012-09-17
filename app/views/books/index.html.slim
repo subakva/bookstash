@@ -3,9 +3,9 @@
   = f.text_field :title
   = f.submit 'Add Book'
 
-%ul{:id => 'book_list'}
+ul id='book_list'
   - @books.each do |book|
-    %li
+    li
       = book.title
       = button_to "Delete", book_path(book),
         id: "delete-#{book.id}",

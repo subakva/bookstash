@@ -1,10 +1,20 @@
 require 'spec_helper'
 
 describe 'Books' do
+  let(:user) { FactoryGirl.create(:user) }
+
+  before {
+    visit signin_path
+    click_link 'Developer'
+    fill_in 'name', with: user.name
+    fill_in 'email', with: user.email
+    click_button 'Sign In'
+  }
+
   describe 'GET /books' do
     it 'displays a list of books' do
-      b1 = Book.create!(:title => 'Fitness for Geeks')
-      b2 = Book.create!(:title => 'Search Patterns')
+      b1 = user.books.create(:title => 'Fitness for Geeks')
+      b2 = user.books.create(:title => 'Search Patterns')
 
       visit books_path
 
@@ -26,8 +36,8 @@ describe 'Books' do
 
   describe 'DELETE /books' do
     it 'can delete a book', :js => true do
-      b1 = Book.create!(:title => 'Fitness for Geeks')
-      b2 = Book.create!(:title => 'Search Patterns')
+      b1 = user.books.create(:title => 'Fitness for Geeks')
+      b2 = user.books.create(:title => 'Search Patterns')
 
       visit books_path
       page.find("#delete-#{b1.id}").click

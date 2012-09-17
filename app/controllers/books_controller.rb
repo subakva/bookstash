@@ -1,11 +1,13 @@
 class BooksController < ApplicationController
+  before_filter :require_current_user
+
   def index
-    @books = Book.all
+    @books = current_user.books
   end
 
   def create
     clean_params = params[:book].slice(:title)
-    book = Book.new(clean_params)
+    book = current_user.books.new(clean_params)
     if book.save
       render json: { title: book.title }, status: :ok
     else
@@ -14,7 +16,7 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book = Book.find(params[:id])
+    book = current_user.books.find(params[:id])
 
     if book.destroy
       render json: { success: true }, status: :ok

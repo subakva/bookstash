@@ -1,16 +1,21 @@
 source 'https://rubygems.org'
 
 gem 'rails', '~>3.2.0'
+
 gem 'jquery-rails'
-gem 'haml-rails'
+gem 'slim-rails'
 
 gem 'dropbox-sdk'
 gem 'unicorn'
 gem 'newrelic_rpm'
 
 gem 'mongoid'
+gem 'omniauth-dropbox'
 # gem 'will_paginate_mongoid'
 # gem 'bootstrap-will_paginate' # Bootstrap-compatible LinkRenderer for will_paginate
+
+gem 'awesome_print'
+# gem 'crack'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -46,4 +51,5 @@ end
 
 group :development do
   gem 'powder'
+  gem 'quiet_assets'
 end

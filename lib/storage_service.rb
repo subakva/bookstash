@@ -19,7 +19,11 @@ class StorageService
     @session = DropboxSession.new(@options[:consumer_key], @options[:consumer_secret])
 
     if @options[:access_key] && @options[:access_secret]
-      @client = initialize_client(@options[:access_key], @options[:access_secret], @options[:access_type])
+      @client = initialize_client(
+        @options[:access_key],
+        @options[:access_secret],
+        @options[:access_type]
+      )
     end
   end
 
@@ -31,7 +35,18 @@ class StorageService
     end
   end
 
-  # account_info: {"referral_link"=>"https://www.dropbox.com/referrals/NTE1NDMxOQ", "display_name"=>"Jason Wadsworth", "uid"=>15431, "country"=>"US", "quota_info"=>{"shared"=>88442659, "quota"=>2684354560, "normal"=>975815023}, "email"=>"jdwadsworth@gmail.com"}
+  # account_info: {
+  #   "referral_link"=>"https://www.dropbox.com/referrals/NTE1NDMxOQ",
+  #   "display_name"=>"Jason Wadsworth",
+  #   "uid"=>15431,
+  #   "country"=>"US",
+  #   "quota_info"=>{
+  #     "shared"=>88442659,
+  #     "quota"=>2684354560,
+  #     "normal"=>975815023
+  #   },
+  #   "email"=>"jdwadsworth@gmail.com"
+  # }
   # upload: {
   #   "revision"      =>  1,
   #   "rev"           =>  "107acb476",
@@ -46,10 +61,13 @@ class StorageService
   #   "mime_type"     =>  "application/epub+zip",
   #   "size"          =>  "43.9 KB"
   # }
-  # media: {"url"=>"https://dl.dropbox.com/0/view/zu9ym60v5qhinur/Apps/BookStash%20%281%29/mongodb.epub", "expires"=>"Sun, 13 May 2012 07:01:20 +0000"}
+  # media: {
+  #   "url"=>"https://dl.dropbox.com/0/view/zu9ym60v5qhinur/Apps/BookStash%20%281%29/mongodb.epub",
+  #   "expires"=>"Sun, 13 May 2012 07:01:20 +0000"
+  # }
 
-  # Q: Should the storage service be responsible for choosing the name? Different storage impls might
-  # have different naming conventions or restrictions, so that does make some sense.
+  # Q: Should the storage service be responsible for choosing the name? Different storage impls
+  # might have different naming conventions or restrictions, so that does make some sense.
   def upload(path)
     ensure_authorization
 
@@ -68,7 +86,7 @@ class StorageService
 
   protected
 
-  # 
+  #
   # Raises DropboxError
   # Returns the url to access the file (authorization required)
   def fetch_url(path, method_name)
@@ -86,17 +104,17 @@ class StorageService
   end
 
   # Checks that the session is authorized.
-  # 
-  # Raises StorageService::Unauthorized if the session is not authorized. 
+  #
+  # Raises StorageService::Unauthorized if the session is not authorized.
   def ensure_authorization
     raise StorageService::Unauthorized.new unless @session.authorized?
   end
 
   # Initializes a client object for the given key and secret.
-  # 
+  #
   # access_key - The access key for the account we want to access.
   # access_secret - The secret key for the account we want to access.
-  # access_type - The 
+  # access_type - The
   def initialize_client(access_key, access_secret, access_type = :app_folder)
     @session.set_access_token(access_key, access_secret)
     DropboxClient.new(@session, access_type)
