@@ -7,16 +7,30 @@ html
     = csrf_meta_tags
 
   body id=(controller.controller_name) class=(controller.action_name)
-    header
-      h1 Book Stash
-      div
-        - flash.each do |name, message|
-          div class="alert alert-#{name}"
-            = message
-      div
-        - if current_user
-          = current_user.name
-          = link_to 'Sign Out', signout_path
-        - else
-          = link_to 'Sign In', signin_path
-    = yield
+    header.navbar
+      div.navbar-inner
+        div.container
+          = link_to "Book Stash", root_path, class: 'brand'
+          ul.nav
+            li.active
+              = link_to "Home", root_path
+            li
+              = link_to "Books", books_path
+          ul.nav.pull-right
+            - if current_user
+              li
+                ul.nav
+                  li.dropdown
+                    a.dropdown-toggle data-toggle='dropdown'
+                      =' current_user.name
+                      b.caret
+                    ul.dropdown-menu
+                      = link_to 'Sign Out', signout_path
+            - else
+              li
+                = link_to 'Sign In', signin_path
+    div.container
+      - flash.each do |name, message|
+        div class="alert alert-#{name}"
+          = message
+      = yield

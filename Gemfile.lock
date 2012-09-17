@@ -30,7 +30,7 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.2)
     arel (3.0.2)
-    awesome_print (1.0.2)
+    awesome_print (1.1.0)
     builder (3.0.3)
     cane (1.3.0)
     capybara (1.1.2)
@@ -52,6 +52,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    commonjs (0.2.6)
     database_cleaner (0.8.0)
     diff-lcs (1.1.3)
     dropbox-sdk (1.5.1)
@@ -60,13 +61,13 @@ GEM
     excon (0.16.2)
     execjs (1.4.0)
       multi_json (~> 1.0)
-    factory_girl (4.0.0)
+    factory_girl (4.1.0)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.0.0)
-      factory_girl (~> 4.0.0)
+    factory_girl_rails (4.1.0)
+      factory_girl (~> 4.1.0)
       railties (>= 3.0.0)
     ffi (1.1.5)
-    foreman (0.57.0)
+    foreman (0.59.0)
       thor (>= 0.13.6)
     hashie (1.2.0)
     heroku (2.31.2)
@@ -75,7 +76,7 @@ GEM
       netrc (~> 0.7.7)
       rest-client (~> 1.6.1)
       rubyzip
-    heroku-api (0.3.4)
+    heroku-api (0.3.5)
       excon (~> 0.16.1)
     hike (1.2.1)
     i18n (0.6.1)
@@ -87,6 +88,16 @@ GEM
     kgio (2.7.4)
     launchy (2.1.2)
       addressable (~> 2.3)
+    less (2.2.2)
+      commonjs (~> 0.2.6)
+    less-rails (2.2.3)
+      actionpack (>= 3.1)
+      less (~> 2.2.0)
+    less-rails-bootstrap (2.1.1)
+      less-rails (~> 2.2.0)
+    less-rails-fontawesome (0.2.1)
+      less-rails (>= 2.1.7)
+      railties (>= 3.1.1)
     libv8 (3.3.10.4)
     libwebsocket (0.1.5)
       addressable
@@ -95,7 +106,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.19)
-    mongoid (3.0.5)
+    mongoid (3.0.6)
       activemodel (~> 3.1)
       moped (~> 1.1)
       origin (~> 1.0)
@@ -104,10 +115,10 @@ GEM
       mongoid (>= 3.0.1)
       rake
       rspec (>= 2.9)
-    moped (1.2.1)
+    moped (1.2.2)
     multi_json (1.3.6)
     netrc (0.7.7)
-    newrelic_rpm (3.4.2)
+    newrelic_rpm (3.4.2.1)
     nokogiri (1.5.5)
     oauth (0.4.7)
     omniauth (1.1.1)
@@ -166,11 +177,6 @@ GEM
       railties (>= 3.0)
       rspec (~> 2.11.0)
     rubyzip (0.9.9)
-    sass (3.2.1)
-    sass-rails (3.2.5)
-      railties (~> 3.2.0)
-      sass (>= 3.1.10)
-      tilt (~> 1.3)
     selenium-webdriver (2.25.0)
       childprocess (>= 0.2.5)
       libwebsocket (~> 0.1.3)
@@ -227,6 +233,8 @@ DEPENDENCIES
   heroku
   jquery-rails
   launchy
+  less-rails-bootstrap
+  less-rails-fontawesome
   mongoid
   mongoid-rspec
   newrelic_rpm
@@ -235,7 +243,6 @@ DEPENDENCIES
   quiet_assets
   rails (~> 3.2.0)
   rspec-rails (~> 2.10)
-  sass-rails (~> 3.2.3)
   simplecov (~> 0.6.2)
   slim-rails
   therubyracer

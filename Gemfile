@@ -2,9 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '~>3.2.0'
 
-gem 'jquery-rails'
-gem 'slim-rails'
-
 gem 'dropbox-sdk'
 gem 'unicorn'
 gem 'newrelic_rpm'
@@ -15,15 +12,17 @@ gem 'omniauth-dropbox'
 # gem 'bootstrap-will_paginate' # Bootstrap-compatible LinkRenderer for will_paginate
 
 gem 'awesome_print'
-# gem 'crack'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'slim-rails'
+  gem 'less-rails-bootstrap'
+  gem 'less-rails-fontawesome'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer', :platform => :ruby
   gem 'uglifier', '>= 1.0.3'
+  gem 'jquery-rails'
 end
 
 group :test, :development do
