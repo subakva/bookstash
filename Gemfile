@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~>3.2.0'
+gem 'rails', '~>3.2.11'
 
 gem 'dropbox-sdk'
 gem 'unicorn'
@@ -19,9 +19,9 @@ group :assets do
   gem 'slim-rails'
   gem 'less-rails-bootstrap'
   gem 'less-rails-fontawesome'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'coffee-rails'
   gem 'therubyracer', :platform => :ruby
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
   gem 'jquery-rails'
 end
 
@@ -30,9 +30,9 @@ group :test, :development do
   gem 'foreman' # Use foreman for managing processes
 
   # Include in development for rake tasks
-  gem 'rspec-rails', '~> 2.10'
-  gem 'simplecov', '~> 0.6.2'
-  gem 'cane', '~> 1.3.0'
+  gem 'rspec-rails'
+  gem 'simplecov'
+  gem 'cane'
 
   # gem 'yard', '~> 0.7.5'
   # gem 'yard-tomdoc', '~> 0.4.0'
