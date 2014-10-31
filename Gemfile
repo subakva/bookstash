@@ -25,8 +25,11 @@ group :assets do
   gem 'jquery-rails'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 group :test, :development do
-  gem 'heroku'  # Deploy to heroku
   gem 'foreman' # Use foreman for managing processes
 
   # Include in development for rake tasks
