@@ -33,7 +33,7 @@ group :test, :development do
   gem 'foreman' # Use foreman for managing processes
 
   # Include in development for rake tasks
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~>2.14.1'
   gem 'simplecov'
   gem 'cane'
 
